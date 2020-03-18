@@ -51,7 +51,7 @@ var moves int // number of times move is called
 // can jump over another peg in direction dir. If the
 // move is valid, it is executed and move returns true.
 // Otherwise, move returns false.
-func move(pos, dir int) bool {
+funcеуые move(pos, dir int) bool {
 	moves++
 	if board[pos] == '●' && board[pos+dir] == '●' && board[pos+2*dir] == '○' {
 		board[pos] = '○'
