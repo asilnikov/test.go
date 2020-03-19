@@ -1,9 +1,17 @@
-// You can edit this code!
-// Click here and start typing.
 package main
 
-import "fmt"
+import "testing"
 
-func main() {
-	fmt.Println("Hello, 世界")
+func Equal(t *testing.T, actual interface{}, expected interface{}, message string) {
+        assert(t, actual, expected, message, true)
+}
+
+func NotEqual(t *testing.T, actual interface{}, expected interface{}, message string) {
+        assert(t, actual, expected, message, false)
+}
+
+func assert(t *testing.T, actual interface{}, expected interface{}, message string, expectation bool) {
+        if (expected == actual) != expectation {
+                t.Errorf("%s failed: Expected %v, but got %v", message, expected, actual)
+        }
 }
